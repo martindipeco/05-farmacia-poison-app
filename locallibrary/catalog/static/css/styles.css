@@ -1,0 +1,337 @@
+/* Estilos de la Farmacia Poison */
+/* Estética intencionadamente oscura */
+/* Todas las imágenes viradas al sepia, incluso el GMap */
+/* Responsive Top Navigation Menu adapted from: https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+
+
+body {
+    background-color : #212121;
+    font-family: 'Montserrat', Times;
+    color: Green;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Main grid containing 3 rows: navigation menu, main, footer */
+.grid-prox, .grid-index, .grid-time, .grid-reg {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 100%;
+}
+
+/* "Productos has an extra row for slides */
+.grid-prod {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+}
+
+
+/* Top navigation responsive menu */
+.nav-bar-resp {
+    background-color: #001a00; /* dark green */
+    font-weight: bold;
+    font-size: 1.5em;
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav-bar-resp a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+/* Add an active class to highlight the current page */
+.nav-bar-resp a.active {
+    color: white
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.nav-bar-resp .icon {
+    display: none;
+}
+
+/* skull & bones and footer logos from fontawesome */
+.logo {
+    fill: red;
+    width: 0.6em;
+}
+
+.fb {
+    fill:red;
+    width: 1.2em;
+}
+
+.tw, .gh {
+    fill: red;
+    width: 1.7em;
+}
+
+/*IMAGES*/
+/* set sepia filter on all images */
+/* intentionally old-fashioned, wasted, creepy */
+img {
+    filter: sepia(75%);
+    border: 0.8vw solid white;
+    max-width: 80vw;
+}
+
+#gmap {
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    width: 80vw;
+    height: 50vw;
+}
+
+#fachada {
+    width: 80vw;
+}
+
+#fachada:hover {
+    filter: grayscale(100%);
+}
+
+#principal{
+    text-align: center;
+    justify-content: center;
+    margin: 2vw 0.5vw 0.5vw 0.5vw;
+}
+
+.sub-grid-text {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+a {
+    color: Red;
+}
+
+a:link {
+    text-decoration: None;
+}
+
+a:visited {
+    text-decoration: None;
+    color: Tomato;
+}
+
+a:hover {
+    text-decoration: None;
+    color: White;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+/* Products list */
+ul {
+    font-family: Garamond, Times;
+    list-style-position: inside;
+    list-style-type: circle;
+}
+
+/*TABLE*/
+table {
+    border: 0.1vw solid red;
+    background-color: transparent;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    font-size: 1.3em;
+}
+
+table th,
+table td {
+    padding: 1.1rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #001a00; /* #001a00 is a dark green. Previosuly: rgb(179, 208, 255, 0.3) */
+}
+
+/* SLIDES */
+/* CSS Slider adapted from https://codepen.io/flatpixels/pen/qQParK */
+/*TODO: Set relative units*/
+/* TODO: check sizes at productos.html*/
+/*
+.sub-grid-img {
+    display: block;
+    max-width: 400px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+.card {
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    /*height: 400px;*/
+    /* Constrain images on small screens */
+    max-width: 80vw;
+    overflow: hidden;
+    border: 0.8vw solid white;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card
+
+.cardpart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    filter:sepia(75%);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    transform: translateX( 700px );
+    background-image: url( ../assets/prod-arsenico-400x400.jpg );
+
+    animation: opaqTransition 15s cubic-bezier(0, 0, 0, 0.97) infinite;
+}
+
+.cardpart.card2 {
+    z-index: 6;
+    background-image: url( ../assets/prod-cianuro-400x400.jpg );
+    animation-delay: 5s;
+}
+
+.cardpart.card3 {
+    z-index: 5;
+    background-image: url(../assets/prod-cicuta-400x400.jpg );
+    animation-delay: 10s;
+}
+
+@keyframes opaqTransition {
+    3% { transform: translateX( 0 ); }
+    36% { transform: translateX( 0 ); }
+    39% { transform: translateX( -700px ); }
+    100% { transform: translateX( -700px ); }
+}
+
+.hr-prods {
+    color:red;
+    margin-right:20vw;
+    margin-left:20vw;
+}
+
+.hr-footer {
+    margin-top: 5vw;
+    color: red;
+    width: 70vw;
+}
+
+footer {
+    padding: 0.5vw;
+    margin-top: 2vw;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
+/* text appearing on hover*/
+.foot-text {
+    visibility: hidden;
+    background-color: #212121;
+    color: red;
+    text-align: center;
+    padding: 5px 0;
+
+    /* Position the text */
+    position: absolute;
+    z-index: 1;
+  }
+
+/* Show the text when you mouse over the tooltip container */
+.foot-tw:hover .foot-text, .foot-f:hover .foot-text, .foot-gh:hover .foot-text {
+    visibility: visible;
+}
+
+.cardcatagolo{
+    width: 100%!important;
+    height: 100%!important;
+}
+
+/* BREAKPOINTS*/
+/* breakpoint for MOBILE devices */
+@media screen and (max-width:600px) {
+    #prox {
+        font-size: 1.1em;
+    }
+    .nav-bar-resp a:not(:first-child) {display: none;}
+    .nav-bar-resp a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width:600px) {
+    .nav-bar-resp.responsive {position: relative;}
+    .nav-bar-resp.responsive a.icon {
+        position: absolute;
+        right:0;
+        top:0;
+    }
+    .nav-bar-resp.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    /* Show 6 products in 1 col and 6 rows */
+    .sub-grid-prod {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+/* breakpoint for TABLETS - LAPTOPS*/
+@media screen and (min-width:601px) and (max-width:1024px) {
+    /* Show 6 products in 2 cols and 3 rows */
+    .sub-grid-prod {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 33.33% 33.33% 33.33%;
+    }
+    /* nav bar
+    #nav-bar {
+        width: 95vw;
+        margin: 1vw;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+    }
+    */
+    footer {
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+    }
+}
+
+/* breakpoint for desktop MONITORS or larger*/
+@media screen and (min-width:1025px) {
+    /* Show 6 products in 3 cols and 2 rows */
+    .sub-grid-prod {
+        display: grid;
+        grid-template-columns: repeat(3,33%);
+        grid-template-rows: 50% 50%;
+    }
+    /*#nav-bar {
+        TODO: delete
+        width: 95vw;
+        margin: 1vw;
+        display: flex;
+        text-align: center;
+        justify-content: space-around;
+    }
+    */
+}

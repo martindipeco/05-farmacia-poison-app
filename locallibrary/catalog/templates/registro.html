@@ -1,0 +1,86 @@
+<!--proyecto c-a-c : farmacia poison en av.constituyentes, caba , fanpage -->
+{% extends "layout.html" %}
+
+{% block title %}Farmacia Poison{% endblock %}
+{% block main %}
+            <main id="principal">
+                <div class="sub-grid-text">
+                    <h1>Formulario de registro</h1>
+                    <h3>Campos con <strong>*</strong> son obligatorios</h3>
+                    <br><br>
+                    <form action="" method="GET" id="registro" name="registro">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="*" maxlength="15" required autofocus>
+                        <br><br>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" placeholder="*" maxlength="20" required>
+                        <br><br>
+                        <!--TODO ask for email & check with Javascript-->
+                        <!--
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                        </div>
+                        -->
+                        <label for="usuario">Nombre de usuario-a</label>
+                        <input type="text" name="usuario" id="usuario" placeholder="*" maxlength="20" required>
+                        <br><br>
+                        <label for="pass">Contraseña</label>
+                        <input type="password" name="pass1" id="pass1" placeholder="*" maxlenght="20" required>
+                        <br><br>
+                        <!--TODO confirm password match with JavaScript-->
+                        <label for="pass2">Repita Contraseña</label>
+                        <input type="password" name="pass2" id="pass2" placeholder="*" maxlenght="20" required>
+                        <button id="check">Confirme</button>
+                        <p id="feedback"></p>
+                        <label for="nacimiento">Fecha de nacimiento</label>
+                        <input type="date" name="nacimiento" id="nacimiento">
+                        <br><br>
+                        <label for="documento">Documento</label>
+                        <select name="tipo-doc" id="tipo-doc">
+                            <option value="seleccione">Seleccione</option>
+                            <option value="DNI">D.N.I.</option>
+                            <option value="LE">L.E.</option>
+                            <option value="LC">L.C.</option>
+                            <option value="pasaporte">Pasaporte</option>
+                        </select>
+                        <br><br>
+                        <label for="num_de_doc">Número de documento</label>
+                        <input type="number" name="num_de_doc" id="num_de_doc" maxlenght="10">
+                        <br><br>
+                        <p>Género</p>
+                        <label for="masculino">
+                            <input type="radio" name="genero" id="masculino" value="M">Masculino
+                        </label>
+                        <label for="femenino">
+                            <input type="radio" name="genero" id="femenino" value="F">Femenino
+                        </label>
+                        <label for="otro">
+                            <input type="radio" name="genero" id="otro" value="X">Otro
+                        </label>
+                        <br><br>
+                        <label for="cobertura">Cobertura médica</label>
+                        <input type="text" name="cobertura" id="cobertura" placeholder="Obra social / Prepaga" maxlength="20">
+                        <br><br>
+                        <label for="num_de_afi">Número de afiliado/a</label>
+                        <input type="number" name="num_de_afi" id="num_de_afi" maxlenght="10">
+                        <br><br>
+                        <label for="destino">Destino final</label>
+                        <select name="cementerio" id="cementerio">
+                            <option value="seleccione">Seleccione</option>
+                            <option value="Recoleta">Recoleta</option>
+                            <option value="Chacarita">Chacarita</option>
+                            <option value="Flores">Flores</option>
+                        </select>
+                        <br><br>
+                        <label for="comentarios">Déjenos su comentario</label>
+                        <br>
+                        <textarea name="comentario" id="comentario" maxlength="260"></textarea>
+                        <br><br>
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </main>
+            <br><br><br><br>
+{% endblock %}
