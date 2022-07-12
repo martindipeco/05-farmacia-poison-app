@@ -125,5 +125,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+CSRF_TRUSTED_ORIGINS = ['https://martindipeco-code50-82969412-r4p76j9rwcwq77-8000.githubpreview.dev', 'https://*.127.0.0.1']
+
 MEDIA_ROOT = os.path.join(BASE_DIR, '')
 MEDIA_URL = '/imagenes/'
