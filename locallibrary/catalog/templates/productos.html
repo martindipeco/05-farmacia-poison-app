@@ -1,0 +1,35 @@
+<!--proyecto c-a-c : farmacia poison en av.constituyentes, caba , fanpage -->
+{% extends "layout.html" %}
+
+{% block title %}Productos Farmacia Poison{% endblock %}
+{% block main %}
+            <main id="principal">
+                <div class="sub-grid-text">
+                    <h1>Nuestros Productos</h1>
+                </div>
+                <!-- slides  -->
+                <div class="card">
+                    <!-- image 1  -->
+                    <div class="cardpart card1"></div>
+                    <!-- image 2  -->
+                    <div class="cardpart card2"></div>
+                    <!-- image 3  -->
+                    <div class="cardpart card3"></div>
+                </div>
+                <br>
+                <br>
+                <div class="sub-grid-prod">
+                    <!-- a grid container for all products -->
+                    {% for producto in productos %}
+                    <div class="item prod1">
+                        <p><h3>{{producto.name}}</h3></p>
+                        <img src="{{producto.image.url}}">
+                        <ul>
+                            <li>{{producto.description}}</li>
+                        </ul>
+                        <hr class="hr-prods">
+                    </div>
+                    {% endfor %}
+            </main>
+            <br><br>
+{% endblock %}
